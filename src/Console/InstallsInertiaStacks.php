@@ -154,7 +154,7 @@ trait InstallsInertiaStacks
 
         // Views...
         copy(__DIR__.'/../../stubs/inertia-common/resources/views/app.blade.php', resource_path('views/app.blade.php'));
-        $this->replaceInFile('@vite', '@viteReactRefresh'.PHP_EOL."        @vite('resources/js/app.jsx')", resource_path('views/app.blade.php'));
+        $this->replaceInFile('@vite', '@viteReactRefresh'.PHP_EOL."        @vite(['resources/css/app.css', 'resources/js/app.jsx'])", resource_path('views/app.blade.php'));
 
         // Components + Pages...
         (new Filesystem)->ensureDirectoryExists(resource_path('js/Components'));
